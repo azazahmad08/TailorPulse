@@ -6,7 +6,7 @@ import SideBar from "../SideBar/SideBar";
 const Root = () => {
     return (
         <div className="flex flex-row">
-            <div className="w-60">
+            <div className="w-1/6">
                 <SideBar></SideBar>
             </div>
             <div className="flex flex-col w-full">

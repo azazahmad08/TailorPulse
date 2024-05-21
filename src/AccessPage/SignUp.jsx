@@ -71,7 +71,7 @@ const SignUp = () => {
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Sign up now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card  w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSignUp} className="card-body">
                         <div className="form-control">
                             <label className="label">

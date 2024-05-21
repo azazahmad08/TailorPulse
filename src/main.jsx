@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 import AuthProvider from "./provider/AuthProvider";
 import SignUp from "./AccessPage/SignUp";
 import SignIn from "./AccessPage/SignIn";
+import Order from "./Order/Order";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <SignIn />,
+      },
+      {
+        path: "/order",
+        element: <Order />,
       },
       
     ],
