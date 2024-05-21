@@ -7,6 +7,9 @@ import {
 import "./index.css";
 import Root from "./Components/layouts/Root";
 import Home from "./pages/home/Home";
+import AuthProvider from "./provider/AuthProvider";
+import SignUp from "./AccessPage/SignUp";
+import SignIn from "./AccessPage/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -14,16 +17,26 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       {
-        path: "contacts/:contactId",
+        path: "/",
         element: <Home />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/signin",
+        element: <SignIn />,
       },
       
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>,
+)

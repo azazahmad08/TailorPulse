@@ -6,10 +6,10 @@ import SideBar from "../SideBar/SideBar";
 const Root = () => {
     return (
         <div className="flex flex-row">
-            <div>
+            <div className="w-60">
                 <SideBar></SideBar>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col w-full">
                 <Navbar></Navbar>
                 <Outlet></Outlet>
             </div>
