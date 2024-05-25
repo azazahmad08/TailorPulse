@@ -24,7 +24,7 @@ const Navbar = () => {
 
       
      
-        <div className="w-1/2 justify-end items-end ">
+        <div className=" justify-end  items-center">
           {user ? (
             <>
               <div

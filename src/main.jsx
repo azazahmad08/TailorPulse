@@ -11,6 +11,7 @@ import AuthProvider from "./provider/AuthProvider";
 import SignUp from "./AccessPage/SignUp";
 import SignIn from "./AccessPage/SignIn";
 import Order from "./Order/Order";
+import CustomerData from "./Customer/CustomerData";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/order",
         element: <Order />,
+      },
+      {
+        path: "/customerdata",
+        element: <CustomerData />,
       },
       
     ],
