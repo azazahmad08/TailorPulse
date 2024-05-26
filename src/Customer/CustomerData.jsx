@@ -1,8 +1,7 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 
 const CustomerData = () => {
   const [formData, setFormData] = useState({
-    id: '',
     name: '',
     description: '',
     type: '',
@@ -22,13 +21,21 @@ const CustomerData = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
+      console.log(formData)
+
       const response = await fetch('http://esafeit.xyz:5000/api/v1/Customer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          
+          id:0  // Ensure id is a number
+        })
+        
       });
 
       if (!response.ok) {
