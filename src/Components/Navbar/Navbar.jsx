@@ -28,13 +28,13 @@ const Navbar = () => {
           {user ? (
             <>
               <div className="flex flex-row justify-end mr-2 mt-1 mb-2"><div
-                className="relative tooltip tooltip-close tooltip-bottom mr-2 "
+                className="relative tooltip tooltip-close tooltip-bottom mr-2  "
                 data-tip={user.displayName}
               >
                 <img
                   src={user.photoURL}
                   alt="User Profile"
-                  className="rounded-full w-10 h-10 cursor-pointer border-2 border-orange-400 justify-center items-center mt-1"
+                  className="rounded-full  w-10 h-10 cursor-pointer border-2 border-orange-400 justify-center items-center mt-1"
                 />
               </div>
               <div className="relative tooltip tooltip-close tooltip-bottom ">

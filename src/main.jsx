@@ -10,6 +10,9 @@ import SignIn from './AccessPage/SignIn';
 import Order from './Order/Order';
 import CustomerData from './Customer/CustomerData';
 import PrivateRoute from './Routes/PrivateRoute';
+import CustomerList from './Customer/CustomerList';
+import CustomerView from './Customer/CustomerView';
+import CustomerUpdate from './Customer/CustomerUpdate'; 
 
 const router = createBrowserRouter([
   {
@@ -47,6 +50,28 @@ const router = createBrowserRouter([
             <CustomerData />
           </PrivateRoute>
         ),
+      },
+      {
+        path: 'customer',
+        element: (
+          <PrivateRoute>
+            <CustomerList />
+          </PrivateRoute>
+        ),
+        children: [
+          {
+            index: true, // Set index to true for the default view
+            element: <CustomerList />,
+          },
+          {
+            path: ':id', // Route parameter for customer ID
+            element: <CustomerView />,
+          },
+          {
+            path: ':id/update', // Route parameter for customer ID
+            element: <CustomerUpdate />,
+          },
+        ],
       },
     ],
   },
