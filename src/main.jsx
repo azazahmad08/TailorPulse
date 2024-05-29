@@ -13,6 +13,11 @@ import PrivateRoute from './Routes/PrivateRoute';
 import CustomerList from './Customer/CustomerList';
 import CustomerView from './Customer/CustomerView';
 import CustomerUpdate from './Customer/CustomerUpdate'; 
+import NewOrder from './Order/NewOrder';
+import OrderReport from './Order/OrderReport';
+import Production from './Production/Production';
+import EmployeeInfo from './Employee/EmployeeInfo';
+import AddEmployee from './Employee/AddEmployee';
 
 const router = createBrowserRouter([
   {
@@ -44,10 +49,42 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'customerdata',
+        path: 'neworder',
         element: (
           <PrivateRoute>
-            <CustomerData />
+            <NewOrder></NewOrder>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'orderreport',
+        element: (
+          <PrivateRoute>
+            <OrderReport></OrderReport>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'production',
+        element: (
+          <PrivateRoute>
+            <Production></Production>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'employeeinfo',
+        element: (
+          <PrivateRoute>
+            <EmployeeInfo></EmployeeInfo>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'addemployee',
+        element: (
+          <PrivateRoute>
+            <AddEmployee></AddEmployee>
           </PrivateRoute>
         ),
       },
