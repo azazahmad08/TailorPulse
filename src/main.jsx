@@ -89,6 +89,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: 'customerdata',
+        element: (
+          <PrivateRoute>
+            <CustomerData></CustomerData>
+          </PrivateRoute>
+        ),
+      },
+      {
         path: 'customer',
         element: (
           <PrivateRoute>
