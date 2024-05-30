@@ -1,0 +1,11 @@
+{
+    "totalUsers": 1000,
+    "totalOrders": 5000,
+    "totalSales": {
+      "totalRevenue": 1000000,
+      "currency": "BDT"
+    },
+    "totalProducts": 2000,
+    "totalReturns": 200
+  }
+  

@@ -1,91 +1,76 @@
+import { useState, useEffect } from 'react';
 import employeeData from "../JSON/employeeData.json";
 
 const EmployeeInfo = () => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    setEmployees(employeeData.map(employee => ({ ...employee, selected: false })));
+  }, []);
+
+  const handleCheckboxChange = (employeeId) => {
+    setEmployees(employees.map(employee =>
+      employee.id === employeeId ? { ...employee, selected: !employee.selected } : employee
+    ));
+  };
+
   return (
-    <section className="container px-4 mx-auto">
-      <div className="flex flex-col">
-        <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div className="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead className="bg-gray-50 dark:bg-gray-800">
-                  <tr>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      ID
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Name
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Email
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Phone Number
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Present Address
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Permanent Address
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      District
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Status
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Bank Name
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Bank Account Number
-                    </th>
-                    <th scope="col" className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                      Rocket Number
-                    </th>
-                    <th scope="col" className="relative py-3.5 px-4">
-                      <span className="sr-only">Actions</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                  {employeeData.map((employee) => (
-                    <tr key={employee.id}>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                        <div className="inline-flex items-center gap-x-3">
-                          <input type="checkbox" className="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700" />
-                          <span>{employee.id}</span>
-                        </div>
-                      </td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.fullName}</td>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">{employee.emailAddress}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.phoneNumber}</td>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">{`${employee.presentAddress}, ${employee.district}`}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{`${employee.permanentAddress}, ${employee.district}`}</td>
-                      <td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">{employee.district}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.status}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.bankName}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.bankAcNumber}</td>
-                      <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{employee.rocketNumber}</td>
-                      <td className="px-4 py-4 text-sm whitespace-nowrap">
-                        <div className="flex items-center gap-x-6">
-                          <button className="text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
-                            Archive
-                          </button>
-                          <button className="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
-                            Download
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="bg-gray-200 p-4">
+      <h2 className="text-xl font-bold mb-4">Employee Information</h2>
+      <table className="border-collapse w-full">
+        <thead className="bg-blue-500 text-white">
+          <tr>
+            <th className="border p-2">EID</th>
+            <th className="border p-2">Full Name</th>
+            <th className="border p-2">Email</th>
+            <th className="border p-2">Phone Number</th>
+            <th className="border p-2">Present Address</th>
+            <th className="border p-2">Permanent Address</th>
+            <th className="border p-2">District</th>
+            <th className="border p-2">Status</th>
+            <th className="border p-2">Bank Name</th>
+            <th className="border p-2">Bank Account Number</th>
+            <th className="border p-2">Rocket Number</th>
+            <th className="border p-2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {employees.map((employee, index) => (
+            <tr key={index} className="bg-white ">
+              <td className="border p-2">
+                <input
+                  type="checkbox"
+                  checked={employee.selected}
+                  onChange={() => handleCheckboxChange(employee.id)}
+                />
+                <span className="ml-2 ">{index + 1}</span>
+              </td>
+              <td className="border p-2">{employee.fullName}</td>
+              <td className="border p-2">{employee.emailAddress}</td>
+              <td className="border p-2">{employee.phoneNumber}</td>
+              <td className="border p-2">{employee.ban_PrsThana}</td>
+              <td className="border p-2">{employee.prmHouse_Village}</td>
+              <td className="border p-2">{employee.prsDistrict}</td>
+              <td className="border p-2 text-green-500 ">{employee.status}</td>
+              <td className="border p-2">{employee.bankName}</td>
+              <td className="border p-2">{employee.bankAcNumber}</td>
+              <td className="border p-2">{employee.rocketNumber}</td>
+              <td className="border p-2 flex justify-center items-center m-auto  ">
+                <button className="mr-2  ">
+                  <img src="visible.png" alt="View" className="w-5 h-5" />
+                </button>
+                <button className="mr-2">
+                  <img src="update.png" alt="Update" className="w-5 h-5" />
+                </button>
+                <button>
+                  <img src="trash.png" alt="Delete" className="w-5 h-5" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

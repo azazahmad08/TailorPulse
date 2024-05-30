@@ -1,0 +1,183 @@
+[
+    {
+      "Uid": 1,
+      "Product": "Dress",
+      "Category": "Women",
+      "Price": 49.99,
+      "Stock": 100,
+      "Order": 30,
+      "Sales": 25
+    },
+    {
+      "Uid": 2,
+      "Product": "Shirt",
+      "Category": "Men",
+      "Price": 29.99,
+      "Stock": 150,
+      "Order": 50,
+      "Sales": 45
+    },
+    {
+      "Uid": 3,
+      "Product": "T-Shirt",
+      "Category": "Children",
+      "Price": 19.99,
+      "Stock": 200,
+      "Order": 70,
+      "Sales": 60
+    },
+    {
+      "Uid": 4,
+      "Product": "Jeans",
+      "Category": "Women",
+      "Price": 59.99,
+      "Stock": 120,
+      "Order": 40,
+      "Sales": 35
+    },
+    {
+      "Uid": 5,
+      "Product": "Jacket",
+      "Category": "Men",
+      "Price": 99.99,
+      "Stock": 80,
+      "Order": 25,
+      "Sales": 20
+    },
+    {
+      "Uid": 6,
+      "Product": "Sweater",
+      "Category": "Children",
+      "Price": 39.99,
+      "Stock": 140,
+      "Order": 55,
+      "Sales": 50
+    },
+    {
+      "Uid": 7,
+      "Product": "Skirt",
+      "Category": "Women",
+      "Price": 35.99,
+      "Stock": 110,
+      "Order": 30,
+      "Sales": 28
+    },
+    {
+      "Uid": 8,
+      "Product": "Pants",
+      "Category": "Men",
+      "Price": 49.99,
+      "Stock": 90,
+      "Order": 35,
+      "Sales": 32
+    },
+    {
+      "Uid": 9,
+      "Product": "Shorts",
+      "Category": "Children",
+      "Price": 24.99,
+      "Stock": 160,
+      "Order": 60,
+      "Sales": 55
+    },
+    {
+      "Uid": 10,
+      "Product": "Blouse",
+      "Category": "Women",
+      "Price": 44.99,
+      "Stock": 130,
+      "Order": 45,
+      "Sales": 40
+    },
+    {
+      "Uid": 11,
+      "Product": "Suit",
+      "Category": "Men",
+      "Price": 199.99,
+      "Stock": 50,
+      "Order": 20,
+      "Sales": 18
+    },
+    {
+      "Uid": 12,
+      "Product": "Hat",
+      "Category": "Children",
+      "Price": 14.99,
+      "Stock": 180,
+      "Order": 75,
+      "Sales": 70
+    },
+    {
+      "Uid": 13,
+      "Product": "Scarf",
+      "Category": "Women",
+      "Price": 19.99,
+      "Stock": 200,
+      "Order": 60,
+      "Sales": 55
+    },
+    {
+      "Uid": 14,
+      "Product": "Tie",
+      "Category": "Men",
+      "Price": 24.99,
+      "Stock": 100,
+      "Order": 35,
+      "Sales": 30
+    },
+    {
+      "Uid": 15,
+      "Product": "Socks",
+      "Category": "Children",
+      "Price": 9.99,
+      "Stock": 250,
+      "Order": 90,
+      "Sales": 85
+    },
+    {
+      "Uid": 16,
+      "Product": "Coat",
+      "Category": "Women",
+      "Price": 129.99,
+      "Stock": 70,
+      "Order": 20,
+      "Sales": 15
+    },
+    {
+      "Uid": 17,
+      "Product": "Shoes",
+      "Category": "Men",
+      "Price": 89.99,
+      "Stock": 60,
+      "Order": 30,
+      "Sales": 25
+    },
+    {
+      "Uid": 18,
+      "Product": "Sandals",
+      "Category": "Children",
+      "Price": 29.99,
+      "Stock": 140,
+      "Order": 50,
+      "Sales": 45
+    },
+    {
+      "Uid": 19,
+      "Product": "Belt",
+      "Category": "Women",
+      "Price": 14.99,
+      "Stock": 180,
+      "Order": 55,
+      "Sales": 50
+    },
+    {
+      "Uid": 20,
+      "Product": "Gloves",
+      "Category": "Men",
+      "Price": 19.99,
+      "Stock": 130,
+      "Order": 45,
+      "Sales": 40
+    }
+  ]
+  
