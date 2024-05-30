@@ -18,6 +18,7 @@ import OrderReport from './Order/OrderReport';
 import Production from './Production/Production';
 import EmployeeInfo from './Employee/EmployeeInfo';
 import AddEmployee from './Employee/AddEmployee';
+import ProductTable from './Product/ProductTable';
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Production></Production>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'product',
+        element: (
+          <PrivateRoute>
+            <ProductTable></ProductTable>
           </PrivateRoute>
         ),
       },
